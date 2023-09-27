@@ -30,16 +30,8 @@ class _HomeScreenState extends State<Homescreen> {
                     color: Colors.white,
                   ),
                 ),
-                Text(
-                  'Master Class',
-                  style: GoogleFonts.roboto(
-                    fontSize: 36,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                  ),
-                )
               ],
-            )
+            ),
           ],
         ),
       ),
