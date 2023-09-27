@@ -18,7 +18,7 @@ class VerticalList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        bottom: 16,
+        bottom: 8,
       ),
       child: SizedBox(
         height: 134,
@@ -28,7 +28,7 @@ class VerticalList extends StatelessWidget {
             Container(
               height: 92,
               width: MediaQuery.of(context).size.width -
-                  (MediaQuery.of(context).size.width * 0.03),
+                  (MediaQuery.of(context).size.width * 0.13),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: const Color(0xFF3E3A6D),
@@ -124,6 +124,21 @@ class VerticalList extends StatelessWidget {
                 ],
               ),
             ),
+            Positioned(
+                bottom: 34,
+                right: 0,
+                child: Container(
+                  height: MediaQuery.of(context).size.width * 0.06,
+                  width: MediaQuery.of(context).size.width * 0.06,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xFFEB53A2),
+                  ),
+                  child: const Icon(
+                    Icons.play_arrow,
+                    color: Colors.white,
+                  ),
+                ))
           ],
         ),
       ),
