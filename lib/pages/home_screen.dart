@@ -1,7 +1,6 @@
 import 'package:app_ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:app_ui/widgets/first_widgetList.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({Key? key}) : super(key: key);
@@ -80,11 +79,22 @@ class _HomeScreenState extends State<Homescreen> {
                   style: GoogleFonts.roboto(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: Color(0xFF9C9A9A),
+                    color: const Color(0xFF9C9A9A),
                   ),
                 ),
               ],
             ),
+            ListView.builder(
+                itemCount: 5,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return const VerticalList(
+                    image: 'assets/Saly-24.png',
+                    title: 'Flutter Developer',
+                    hours: '8 Hours',
+                    rating: 5.0,
+                  );
+                })
           ],
         ),
       ),
