@@ -60,6 +60,31 @@ class _HomeScreenState extends State<Homescreen> {
                     );
                   },
                 )),
+            const SizedBox(
+              height: 34,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Free Online Class',
+                  style: GoogleFonts.roboto(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  'From over 80 Lectures',
+                  style: GoogleFonts.roboto(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFF9C9A9A),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
