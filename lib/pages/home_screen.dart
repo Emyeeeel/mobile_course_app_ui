@@ -54,7 +54,7 @@ class _HomeScreenState extends State<Homescreen> {
                     return const HorizontalList(
                       header: 'Recommended',
                       title: 'UI/UX DESIGNER BEGINNER',
-                      image: 'app_ui/assets/Saly-10.png',
+                      image: 'assets/Saly-10.png',
                       linearStart: 0xFF9288E4,
                       linearEnd: 0xFF534EA7,
                     );
