@@ -1,16 +1,15 @@
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class VerticalList extends StatelessWidget {
-  const VerticalList(
-      {Key? key,
-      required this.image,
-      required this.title,
-      required this.hours,
-      required this.rating})
-      : super(key: key);
+  const VerticalList({
+    Key? key,
+    required this.image,
+    required this.title,
+    required this.hours,
+    required this.rating,
+  }) : super(key: key);
 
   final String image, title, hours;
   final double rating;
@@ -50,10 +49,35 @@ class VerticalList extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                    height: 115,
                     width: 115,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(image: AssetImage(image))),
+                    height: 115,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: 0,
+                          top: 31, // Adjust this value as needed
+                          child: Container(
+                            width: 115,
+                            height: 84,
+                            decoration: ShapeDecoration(
+                              color: const Color(0xFFFFB4B4),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(9),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 115,
+                          width: 115,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(image),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
@@ -78,21 +102,22 @@ class VerticalList extends StatelessWidget {
                           ),
                         ),
                         RatingBar.builder(
-                            initialRating: rating,
-                            minRating: 1,
-                            direction: Axis.horizontal,
-                            allowHalfRating: true,
-                            itemCount: 5,
-                            itemSize: 18,
-                            itemPadding:
-                                const EdgeInsets.symmetric(horizontal: 1),
-                            itemBuilder: (context, _) => const Icon(
-                                  Icons.star,
-                                  color: Color(0xFFF4C465),
-                                ),
-                            onRatingUpdate: (rating) {
-                              print(rating);
-                            })
+                          initialRating: rating,
+                          minRating: 1,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemSize: 18,
+                          itemPadding:
+                              const EdgeInsets.symmetric(horizontal: 1),
+                          itemBuilder: (context, _) => const Icon(
+                            Icons.star,
+                            color: Color(0xFFF4C465),
+                          ),
+                          onRatingUpdate: (rating) {
+                            print(rating);
+                          },
+                        )
                       ],
                     ),
                   )
