@@ -1,3 +1,4 @@
+import 'package:app_ui/widgets/maskedWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,6 +31,7 @@ class HorizontalList extends StatelessWidget {
                 colors: <Color>[Color(linearStart), Color(linearEnd)])),
         child: Stack(
           children: [
+            Positioned(right: 0, bottom: 0, child: MaskGroup()),
             Positioned(
                 top: 15,
                 left: 11,
@@ -73,7 +75,7 @@ class HorizontalList extends StatelessWidget {
                 bottom: 0,
                 child: Image.asset(
                   image,
-                ))
+                )),
           ],
         ),
       ),

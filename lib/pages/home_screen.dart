@@ -59,7 +59,7 @@ class _HomeScreenState extends State<Homescreen> {
                       linearEnd: 0xFF534EA7,
                     );
                   },
-                ))
+                )),
           ],
         ),
       ),
