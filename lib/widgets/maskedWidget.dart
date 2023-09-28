@@ -106,8 +106,8 @@ class Circle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          width: 246,
+        Container(
+          width: 260,
           height: 349,
           child: Stack(
             children: [
@@ -115,12 +115,10 @@ class Circle extends StatelessWidget {
                 left: 0,
                 top: 0,
                 child: Container(
-                  width: 246,
+                  width: 260,
                   height: 349,
-                  decoration: ShapeDecoration(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(22),
-                    ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
                   ),
                 ),
               ),
@@ -129,11 +127,13 @@ class Circle extends StatelessWidget {
                 top: 111,
                 child: Container(
                   width: 283,
-                  height: 260,
-                  decoration: const ShapeDecoration(
-                    color: Color(0xFF2857A9),
-                    shape: OvalBorder(
-                      side: BorderSide(width: 14, color: Color(0xFF326AA5)),
+                  height: 283,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF2857A9),
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      width: 15,
+                      color: const Color(0xFF326AA5),
                     ),
                   ),
                 ),

@@ -17,7 +17,7 @@ class _HomeScreenState extends State<Homescreen> {
       backgroundColor: Theme.of(context).primaryColor,
       body: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
           physics: const BouncingScrollPhysics(),
           children: [
             Column(

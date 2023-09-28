@@ -132,7 +132,7 @@ class VerticalList extends StatelessWidget {
             ),
             Positioned(
                 bottom: 34,
-                right: 0,
+                right: 25,
                 child: Container(
                   height: MediaQuery.of(context).size.width * 0.06,
                   width: MediaQuery.of(context).size.width * 0.06,
@@ -282,7 +282,7 @@ class VerticalList1 extends StatelessWidget {
             ),
             Positioned(
                 bottom: 34,
-                right: 0,
+                right: 25,
                 child: Container(
                   height: MediaQuery.of(context).size.width * 0.06,
                   width: MediaQuery.of(context).size.width * 0.06,
