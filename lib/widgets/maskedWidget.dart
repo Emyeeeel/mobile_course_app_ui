@@ -81,8 +81,55 @@ class MaskGroup1 extends StatelessWidget {
                 left: 100,
                 top: 192,
                 child: Container(
-                  width: 195,
+                  padding: const EdgeInsets.all(10),
                   height: 179,
+                  decoration: const ShapeDecoration(
+                    color: Color(0xFF2857A9),
+                    shape: OvalBorder(
+                      side: BorderSide(width: 14, color: Color(0xFF326AA5)),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class Circle extends StatelessWidget {
+  const Circle({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          width: 246,
+          height: 349,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 0,
+                top: 0,
+                child: Container(
+                  width: 246,
+                  height: 349,
+                  decoration: ShapeDecoration(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(22),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 12,
+                top: 111,
+                child: Container(
+                  width: 283,
+                  height: 260,
                   decoration: const ShapeDecoration(
                     color: Color(0xFF2857A9),
                     shape: OvalBorder(
