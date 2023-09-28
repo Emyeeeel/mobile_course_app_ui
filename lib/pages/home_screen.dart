@@ -97,14 +97,24 @@ class _HomeScreenState extends State<Homescreen> {
             ),
             ListView.builder(
                 itemCount: 5,
+                scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  return const VerticalList(
-                    image: 'assets/Saly-24.png',
-                    title: 'Flutter Developer',
-                    hours: '8 Hours',
-                    rating: 5.0,
-                  );
+                  if (index == 1) {
+                    return const VerticalList1(
+                      image: 'assets/Saly-24.png',
+                      title: 'Full Stack Javascript',
+                      hours: '6 Hours',
+                      rating: 5.0,
+                    );
+                  } else {
+                    return const VerticalList(
+                      image: 'assets/Saly-24.png',
+                      title: 'Flutter Developer',
+                      hours: '8 Hours',
+                      rating: 5.0,
+                    );
+                  }
                 })
           ],
         ),
