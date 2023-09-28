@@ -53,6 +53,8 @@ class MaskGroup extends StatelessWidget {
 }
 
 class MaskGroup1 extends StatelessWidget {
+  final int start = 0xFFF4C465;
+  final int end = 0xFFC63956;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -66,19 +68,14 @@ class MaskGroup1 extends StatelessWidget {
                 left: 0,
                 top: 0,
                 child: Container(
-                  width: 246,
-                  height: 349,
-                  decoration: ShapeDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment(0.23, -0.97),
-                      end: Alignment(-0.23, 0.97),
-                      colors: [Color(0xFF9288E4), Color(0xFF534EA7)],
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(22),
-                    ),
-                  ),
-                ),
+                    width: 246,
+                    height: 349,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(22),
+                        gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: const Alignment(1, 0.0),
+                            colors: <Color>[Color(start), Color(end)]))),
               ),
               Positioned(
                 left: 100,
@@ -86,7 +83,7 @@ class MaskGroup1 extends StatelessWidget {
                 child: Container(
                   width: 195,
                   height: 179,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     color: Color(0xFF2857A9),
                     shape: OvalBorder(
                       side: BorderSide(width: 14, color: Color(0xFF326AA5)),
