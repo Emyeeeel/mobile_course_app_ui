@@ -102,7 +102,7 @@ class _HomeScreenState extends State<Homescreen> {
                 itemBuilder: (context, index) {
                   if (index == 1) {
                     return const VerticalList1(
-                      image: 'assets/Saly-24.png',
+                      image: 'assets/Saly-13.png',
                       title: 'Full Stack Javascript',
                       hours: '6 Hours',
                       rating: 5.0,
