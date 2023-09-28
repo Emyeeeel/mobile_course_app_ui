@@ -47,16 +47,27 @@ class _HomeScreenState extends State<Homescreen> {
             SizedBox(
                 height: 349,
                 child: ListView.builder(
+                  itemCount: 5,
                   scrollDirection: Axis.horizontal,
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) {
-                    return const HorizontalList(
-                      header: 'Recommended',
-                      title: 'UI/UX DESIGNER BEGINNER',
-                      image: 'assets/Saly-10.png',
-                      linearStart: 0xFF9288E4,
-                      linearEnd: 0xFF534EA7,
-                    );
+                    if (index == 0) {
+                      return const HorizontalList(
+                        header: 'Recommended',
+                        title: 'UI/UX DESIGNER BEGINNER',
+                        image: 'assets/Saly-10.png',
+                        linearStart: 0xFF9288E4,
+                        linearEnd: 0xFF534EA7,
+                      );
+                    } else if (index == 1) {
+                      return const HorizontalList1(
+                        header: 'NEW CLASS',
+                        title: 'GRAPHIC DESIGN MASTER',
+                        image: 'assets/Saly-36.png',
+                        start: 0xFFF4C465,
+                        end: 0xFFC63956,
+                      );
+                    }
                   },
                 )),
             const SizedBox(
