@@ -10,6 +10,11 @@ class DetailsScreen extends StatefulWidget {
 class _MyWidgetState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
+      body: SafeArea(
+        child: ListView(),
+      ),
+    );
   }
 }

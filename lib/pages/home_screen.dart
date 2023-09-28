@@ -1,3 +1,4 @@
+import 'package:app_ui/pages/details_screen.dart';
 import 'package:app_ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -31,14 +32,22 @@ class _HomeScreenState extends State<Homescreen> {
                     color: Colors.white,
                   ),
                 ),
-                Text(
-                  'Master Class',
-                  style: GoogleFonts.roboto(
-                    fontSize: 36,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => const DetailsScreen()));
+                  },
+                  child: Text(
+                    'Master Class',
+                    style: GoogleFonts.roboto(
+                      fontSize: 36,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
+                )
               ],
             ),
             const SizedBox(
@@ -51,21 +60,21 @@ class _HomeScreenState extends State<Homescreen> {
                   scrollDirection: Axis.horizontal,
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) {
-                    if (index == 0) {
-                      return const HorizontalList(
-                        header: 'Recommended',
-                        title: 'UI/UX DESIGNER BEGINNER',
-                        image: 'assets/Saly-10.png',
-                        linearStart: 0xFF9288E4,
-                        linearEnd: 0xFF534EA7,
-                      );
-                    } else if (index == 1) {
+                    if (index == 1) {
                       return const HorizontalList1(
                         header: 'NEW CLASS',
                         title: 'GRAPHIC DESIGN MASTER',
                         image: 'assets/Saly-36.png',
                         start: 0xFFF4C465,
                         end: 0xFFC63956,
+                      );
+                    } else {
+                      return const HorizontalList(
+                        header: 'Recommended',
+                        title: 'UI/UX DESIGNER BEGINNER',
+                        image: 'assets/Saly-10.png',
+                        linearStart: 0xFF9288E4,
+                        linearEnd: 0xFF534EA7,
                       );
                     }
                   },
