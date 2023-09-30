@@ -1,3 +1,4 @@
+import 'package:app_ui/widgets/third_widgetList.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -41,7 +42,7 @@ class _MyWidgetState extends State<DetailsScreen> {
                 ),
               )),
           Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               top: 20,
               left: 22,
               right: 20,
@@ -56,7 +57,7 @@ class _MyWidgetState extends State<DetailsScreen> {
                   allowHalfRating: true,
                   itemCount: 5,
                   itemSize: 18,
-                  itemPadding: EdgeInsets.symmetric(horizontal: 1),
+                  itemPadding: const EdgeInsets.symmetric(horizontal: 1),
                   itemBuilder: (context, _) => const Icon(
                     Icons.star,
                     color: Color(0xFFF4C465),
@@ -150,20 +151,54 @@ class _MyWidgetState extends State<DetailsScreen> {
                       ],
                     ),
                     Container(
-                        width: 54,
-                        height: 47,
-                        decoration: BoxDecoration(
-                            color: const Color(0xFF353567),
-                            borderRadius: BorderRadius.circular(6)),
-                        child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 12),
-                            child: SvgPicture.asset('assets/Frame.svg'))),
+                      width: 54,
+                      height: 47,
+                      decoration: BoxDecoration(
+                          color: const Color(0xFF353567),
+                          borderRadius: BorderRadius.circular(6)),
+                      child: Container(
+                        width: 24,
+                        height: 24,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/Frame.png'),
+                          ),
+                        ),
+                      ),
+                    )
                   ],
-                )
+                ),
               ],
             ),
-          )
+          ),
+          const SizedBox(
+            height: 39,
+          ),
+          ListView.builder(
+              itemCount: 5,
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  return const Vertical(
+                    image: 'assets/Saly-20.png',
+                    title: 'Introduction Design Graphic',
+                    hours: '12 minutes',
+                  );
+                } else if (index == 1) {
+                  return const Vertical1(
+                    image: 'assets/Saly-21.png',
+                    title: 'Fundamental of Design',
+                    hours: '16 minutes',
+                  );
+                } else {
+                  return const Vertical2(
+                    image: 'assets/Saly-25.png',
+                    title: 'Layout Design',
+                    hours: '10 minutes',
+                  );
+                }
+              }),
         ],
       )),
     );

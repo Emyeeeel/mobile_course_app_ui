@@ -79,6 +79,7 @@ flutter:
     - assets/Ellipse 5.png
     - assets/Ellipse 6.png
     - assets/Frame.svg
+    - assets/Frame.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

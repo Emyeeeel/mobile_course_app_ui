@@ -1,4 +1,3 @@
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -17,15 +16,17 @@ class Vertical extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.only(
           left: 20,
+          right: 20,
+          top: 12,
+          bottom: 12,
         ),
         child: SizedBox(
           height: 82,
           child: Stack(
             children: [
               Container(
-                height: 92,
-                width: MediaQuery.of(context).size.width -
-                    (MediaQuery.of(context).size.width * 0.13),
+                height: 82,
+                width: 374,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: const Color(0xFF3E3A6D),
@@ -51,13 +52,63 @@ class Vertical extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                width: 100,
-                height: 200,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(image),
-                    fit: BoxFit.fill,
+              Positioned(
+                left: 110,
+                top: 19,
+                child: Text(
+                  title,
+                  style: GoogleFonts.roboto(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 110,
+                top: 43,
+                child: Text(
+                  hours,
+                  style: GoogleFonts.roboto(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: const Color(0xFF8C8C8C),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 185,
+                top: 42,
+                child: Container(
+                  width: 39,
+                  height: 20,
+                  decoration: BoxDecoration(
+                      color: const Color(0xFFEB53A2),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Free',
+                      style: GoogleFonts.roboto(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: -15,
+                top: -25,
+                child: Container(
+                  width: 130,
+                  height: 130,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(image),
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
               ),
@@ -73,113 +124,86 @@ class Vertical1 extends StatelessWidget {
     required this.image,
     required this.title,
     required this.hours,
-    required this.rating,
   }) : super(key: key);
 
   final String image, title, hours;
-  final double rating;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        bottom: 8,
+        right: 20,
+        top: 12,
+        bottom: 12,
       ),
       child: SizedBox(
-        height: 134,
-        child: Stack(
-          alignment: Alignment.bottomLeft,
-          children: [
-            Container(
-              height: 92,
-              width: MediaQuery.of(context).size.width -
-                  (MediaQuery.of(context).size.width * 0.13),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: const Color(0xFF3E3A6D),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.25),
-                    blurRadius: 13,
-                    offset: const Offset(0, 4),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 26,
-                bottom: 19,
-              ),
-              child: Row(
+        height: 82,
+        child: Stack(children: [
+          Positioned(
+            left: 20,
+            child: SizedBox(
+              child: Stack(
                 children: [
                   Container(
-                    width: 115,
-                    height: 115,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: 0,
-                          top: 31, // Adjust this value as needed
-                          child: Container(
-                            width: 115,
-                            height: 84,
-                            decoration: ShapeDecoration(
-                              color: const Color(0xFFCCB4FF),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(9),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          height: 115,
-                          width: 115,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(image),
-                            ),
-                          ),
-                        ),
-                      ],
+                    height: 82,
+                    width: 374,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          title,
-                          style: GoogleFonts.roboto(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          hours,
-                          style: GoogleFonts.roboto(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xFF8C8C8C),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 6,
-                        ),
-                      ],
+                  Container(
+                    width: 99,
+                    height: 82,
+                    decoration: ShapeDecoration(
+                      color: const Color(0xFFF4C465),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(19),
+                      ),
                     ),
-                  )
+                  ),
+                  Positioned(
+                    left: 110,
+                    top: 19,
+                    child: Text(
+                      title,
+                      style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 110,
+                    top: 43,
+                    child: Text(
+                      hours,
+                      style: GoogleFonts.roboto(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: const Color(0xFF8C8C8C),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+          Positioned(
+            left: 8,
+            top: -24,
+            child: Container(
+              width: 133,
+              height: 133,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(image),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ),
+        ]),
       ),
     );
   }
@@ -191,113 +215,86 @@ class Vertical2 extends StatelessWidget {
     required this.image,
     required this.title,
     required this.hours,
-    required this.rating,
   }) : super(key: key);
 
   final String image, title, hours;
-  final double rating;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        bottom: 8,
+        right: 20,
+        top: 12,
+        bottom: 12,
       ),
       child: SizedBox(
-        height: 134,
-        child: Stack(
-          alignment: Alignment.bottomLeft,
-          children: [
-            Container(
-              height: 92,
-              width: MediaQuery.of(context).size.width -
-                  (MediaQuery.of(context).size.width * 0.13),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: const Color(0xFF3E3A6D),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.25),
-                    blurRadius: 13,
-                    offset: const Offset(0, 4),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 26,
-                bottom: 19,
-              ),
-              child: Row(
+        height: 82,
+        child: Stack(children: [
+          Positioned(
+            left: 20,
+            child: SizedBox(
+              child: Stack(
                 children: [
                   Container(
-                    width: 115,
-                    height: 115,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: 0,
-                          top: 31, // Adjust this value as needed
-                          child: Container(
-                            width: 115,
-                            height: 84,
-                            decoration: ShapeDecoration(
-                              color: const Color(0xFFCCB4FF),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(9),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          height: 115,
-                          width: 115,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(image),
-                            ),
-                          ),
-                        ),
-                      ],
+                    height: 82,
+                    width: 374,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          title,
-                          style: GoogleFonts.roboto(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          hours,
-                          style: GoogleFonts.roboto(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xFF8C8C8C),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 6,
-                        ),
-                      ],
+                  Container(
+                    width: 99,
+                    height: 82,
+                    decoration: ShapeDecoration(
+                      color: const Color(0xFF326AA5),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(19),
+                      ),
                     ),
-                  )
+                  ),
+                  Positioned(
+                    left: 110,
+                    top: 19,
+                    child: Text(
+                      title,
+                      style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 110,
+                    top: 43,
+                    child: Text(
+                      hours,
+                      style: GoogleFonts.roboto(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: const Color(0xFF8C8C8C),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+          Positioned(
+            left: 8,
+            top: 10,
+            child: Container(
+              width: 116,
+              height: 62,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(image),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ),
+        ]),
       ),
     );
   }
